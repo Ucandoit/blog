@@ -4,14 +4,14 @@ import { Theme } from './theme';
 /**
  * Defines global styles including theme switching.
  */
-export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
+const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   ${({ theme }) => css`
     html,
     body {
       padding: 0;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
     }
 
     * {
@@ -25,3 +25,5 @@ export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     }
   `}
 `;
+
+export default GlobalStyle;
