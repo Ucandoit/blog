@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
         Helvetica Neue, sans-serif;
+      font-size: 16px;
     }
 
     * {
@@ -22,6 +23,11 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       height: 100vh;
       color: ${theme.colors.text};
       background: ${theme.colors.background};
+    }
+
+    button {
+      border: none;
+      background: none;
     }
   `}
 `;
