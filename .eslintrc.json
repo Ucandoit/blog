@@ -12,6 +12,8 @@
   "ignorePatterns": ["next.config.js"],
   "rules": {
     // disable because href is defined on next link component
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    // no need for ts
+    "react/require-default-props": "off"
   }
 }

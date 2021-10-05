@@ -17,7 +17,7 @@ export const StyledNav = styled.nav`
     align-items: center;
     margin: 0 auto;
 
-    & button {
+    button {
       padding: 0;
       cursor: pointer;
 
