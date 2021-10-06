@@ -6,9 +6,10 @@ interface Size {
 }
 
 export default function useWindowSize(): Size {
+  const ssr = typeof window === 'undefined';
   const [windowSize, setWindowSize] = useState<Size>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: !ssr ? window.innerWidth : 1920,
+    height: !ssr ? window.innerHeight : 1080,
   });
   useEffect(() => {
     function handleResize() {
