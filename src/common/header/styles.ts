@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import Logo from './Logo';
 
 export const StyledHeader = styled.header`
   ${({ theme }) => css`
@@ -16,8 +17,13 @@ export const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     margin: 0 auto;
+    max-width: 1440px;
 
-    button {
+    @media (min-width: 768px) {
+      padding: 0 30px;
+    }
+
+    & > button {
       padding: 0;
       cursor: pointer;
 
@@ -25,12 +31,28 @@ export const StyledNav = styled.nav`
       @media (min-width: 768px) {
         display: none;
       }
+    }
 
-      .iconfont {
-        color: ${theme.colors.primary};
-        font-size: 2rem;
-        padding: ${theme.spacing.xs};
-      }
+    .iconfont {
+      color: ${theme.colors.primary};
+      font-size: 2rem;
+      padding: ${theme.spacing.xs};
+    }
+  `}
+`;
+
+export const StyledLogo = styled(Logo)`
+  ${({ theme }) => css`
+    text-decoration: none;
+    color: ${theme.colors.primary};
+    font-size: 2rem;
+    position: relative;
+    left: -1.5rem;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      left: 0;
+      margin: 0 30px 0 0;
     }
   `}
 `;

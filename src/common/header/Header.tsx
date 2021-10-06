@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Menu from '../menu/Menu';
 import useWindowSize from '../useWindowSize';
-import { StyledHeader, StyledNav } from './styles';
+import { StyledHeader, StyledLogo, StyledNav } from './styles';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -20,9 +19,7 @@ const Header = () => {
         <button type="button" onClick={handleClickMenu}>
           <div className="iconfont icon-menu" />
         </button>
-        <Link href="/">
-          <a title="Home">ucandoit.io</a>
-        </Link>
+        <StyledLogo />
         <Menu open={open} handleClickMenu={handleClickMenu} />
       </StyledNav>
     </StyledHeader>

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import { Header } from '../common/header';
+import Header from '../common/header/Header';
 
 const StyledHome = styled.div`
   font-size: 2rem;
