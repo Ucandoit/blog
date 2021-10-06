@@ -27,17 +27,19 @@ const StyledMenuItem = styled(MenuItem)<{ open: boolean }>`
 const StyledMenu = styled.div<{ open: boolean }>`
   ${({ theme, open }) => css`
     display: flex;
-    ${open
-      ? css`
-          position: absolute;
-          top: 0;
-          left: 0;
-          flex-direction: column;
-          height: 100vh;
-          width: 50%;
-          background-color: ${theme.colors.background};
-        `
-      : css``}
+
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -320px;
+      flex-direction: column;
+      width: 320px;
+      background-color: ${theme.colors.background};
+      transform: ${open ? 'translate(320px);' : 'translate(0)'};
+      visibility: ${open ? 'visible' : 'hidden'};
+      transition: 0.3s ease-in-out;
+    }
   `}
 `;
 
