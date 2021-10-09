@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import styled from 'styled-components';
-import Header from '../common/header/Header';
+import { getHome, Home, HomeData } from '../modules/home';
 
-const StyledHome = styled.div`
-  font-size: 2rem;
-`;
+interface IndexProps {
+  data: HomeData;
+}
 
-const Index: NextPage = () => (
-  <>
-    <Header />
-    <StyledHome>Hello world</StyledHome>
-  </>
-);
+export default function Index({ data }: IndexProps) {
+  return <Home data={data} />;
+}
 
-export default Index;
+export async function getStaticProps() {
+  const data = await getHome();
+  return {
+    props: { data },
+  };
+}
