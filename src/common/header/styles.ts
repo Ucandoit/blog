@@ -17,7 +17,7 @@ export const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: ${theme.layout.maxWidth};
 
     @media (min-width: 768px) {
       padding: 0 30px;
