@@ -6,6 +6,7 @@ export type Theme = {
   };
   spacing: {
     xs: string;
+    md: string;
   };
   layout: {
     maxWidth: string;
@@ -15,9 +16,10 @@ export type Theme = {
 const theme = {
   spacing: {
     xs: '0.5rem',
+    md: '1rem',
   },
   layout: {
-    maxWidth: '1280px',
+    maxWidth: '1080px',
   },
 };
 

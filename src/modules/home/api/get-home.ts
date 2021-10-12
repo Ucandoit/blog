@@ -6,6 +6,8 @@ const HOME_ENDPOINT = '/home';
 export interface HomeData {
   person: PersonData;
   about: AboutData;
+  professionalSkills: SkillsData;
+  technicalSkills: SkillsData;
 }
 
 export interface PersonData {
@@ -18,6 +20,17 @@ export interface PersonData {
 export interface AboutData {
   title: string;
   description: string;
+}
+
+export interface SkillsData {
+  title: string;
+  items: SkillData;
+}
+
+interface SkillData {
+  name: string;
+  level: number;
+  style: string;
 }
 
 export function getHome() {
