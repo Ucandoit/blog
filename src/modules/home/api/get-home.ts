@@ -24,13 +24,13 @@ export interface AboutData {
 
 export interface SkillsData {
   title: string;
-  items: SkillData;
+  items: SkillData[];
 }
 
 interface SkillData {
   name: string;
   level: number;
-  style: string;
+  style: 'circle' | 'bar';
 }
 
 export function getHome() {

@@ -38,3 +38,22 @@ export const AboutContent = styled.div`
     }
   `}
 `;
+
+export const SkillsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const SkillContainer = styled.div<{ type: 'circle' | 'bar' }>`
+  ${({ type }) => css`
+    width: ${type === 'circle' ? '50%' : '100%'};
+    text-align: center;
+    margin-top: 2rem;
+
+    @media (min-width: 768px) {
+      width: ${type === 'circle' ? '25%' : '50%'};
+    }
+  `}
+`;
+
+export const SkillTitle = styled.div``;
