@@ -55,5 +55,3 @@ export const SkillContainer = styled.div<{ type: 'circle' | 'bar' }>`
     }
   `}
 `;
-
-export const SkillTitle = styled.div``;

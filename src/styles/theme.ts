@@ -3,6 +3,7 @@ export type Theme = {
     text: string;
     background: string;
     primary: string;
+    primaryBg: string;
   };
   spacing: {
     xs: string;
@@ -32,6 +33,7 @@ export const darkTheme: Theme = {
     text: '#dcdfe4',
     background: '#282c34',
     primary: '#61afef',
+    primaryBg: '#a0a1a7',
   },
 };
 
@@ -44,5 +46,6 @@ export const lightTheme: Theme = {
     text: '#383a42',
     background: '#fafafa',
     primary: '#0184bc',
+    primaryBg: '#a0a1a7',
   },
 };
