@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import { StyledMain } from './styles';
 
@@ -11,7 +12,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
     <>
       <Header />
       <StyledMain>{children}</StyledMain>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
