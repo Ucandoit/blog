@@ -15,6 +15,17 @@ export interface PersonData {
   firstname: string;
   lastname: string;
   jobPosition: string;
+  socialMedias: SocialMediaData[];
+}
+
+interface SocialMediaData {
+  id: number;
+  name?: string;
+  link: string;
+  icon: {
+    url: string;
+  };
+  svg: string;
 }
 
 export interface AboutData {
@@ -33,6 +44,19 @@ interface SkillData {
   style: 'circle' | 'bar';
 }
 
-export function getHome() {
-  return fetchJson<HomeData>(`${API_URL}${HOME_ENDPOINT}`);
+export async function getHome() {
+  const homeData = await fetchJson<HomeData>(`${API_URL}${HOME_ENDPOINT}`);
+  // fetch svg content in order to change its color
+  if (homeData && homeData.person.socialMedias.length > 0) {
+    homeData.person.socialMedias = await Promise.all(
+      homeData.person.socialMedias.map(async (socialMedia) => {
+        const svgData = await fetch(API_URL + socialMedia.icon.url);
+        return {
+          ...socialMedia,
+          svg: await svgData.text(),
+        };
+      })
+    );
+  }
+  return homeData;
 }

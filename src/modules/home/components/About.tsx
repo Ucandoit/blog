@@ -9,7 +9,6 @@ interface AboutProps {
 
 const About = ({ data: { title, description } }: AboutProps): JSX.Element => (
   <Section title={title}>
-    {/* eslint-disable-next-line react/no-danger */}
     <AboutContent dangerouslySetInnerHTML={{ __html: marked(description) }} />
   </Section>
 );
