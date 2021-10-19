@@ -1,13 +1,17 @@
 import styled, { css } from 'styled-components';
-import Section from '../../../common/section/Section';
 
-export const PersonContainer = styled(Section)`
+export const PersonContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    text-align: inherit;
+    grid-template-columns: 1fr 1fr;
+  }
+
   & > div {
     text-align: center;
-
-    @media (min-width: 768px) {
-      text-align: inherit;
-    }
   }
 `;
 
@@ -46,6 +50,14 @@ export const SocialMediaLink = styled.a`
       height: 1.5rem;
     }
   `}
+`;
+
+export const PersonBannerContainer = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 export const AboutContent = styled.div`

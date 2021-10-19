@@ -1,25 +1,37 @@
+import Image from 'next/image';
+import Section from '../../../common/section/Section';
+import { API_URL } from '../../../config/app-config';
 import { PersonData } from '../api/get-home';
-import { JobContainer, NameContainer, PersonContainer, SocialMediaLink } from './styles';
+import { JobContainer, NameContainer, PersonBannerContainer, PersonContainer, SocialMediaLink } from './styles';
 
 interface PersonProps {
   data: PersonData;
 }
 export default function Person({
-  data: { title, firstname, lastname, jobPosition, socialMedias },
+  data: { title, firstname, lastname, jobPosition, socialMedias, banner },
 }: PersonProps): JSX.Element {
   return (
-    <PersonContainer title={title}>
-      <div>
-        <NameContainer>
-          {firstname} {lastname}
-        </NameContainer>
-        <JobContainer>{jobPosition}</JobContainer>
+    <Section title={title}>
+      <PersonContainer>
         <div>
+          <NameContainer>
+            {firstname} {lastname}
+          </NameContainer>
+          <JobContainer>{jobPosition}</JobContainer>
           {socialMedias.map(({ id, link, svg }) => (
             <SocialMediaLink key={id} href={link} target="_blank" dangerouslySetInnerHTML={{ __html: svg }} />
           ))}
         </div>
-      </div>
-    </PersonContainer>
+        <PersonBannerContainer>
+          <Image
+            src={API_URL + banner.url}
+            alt={banner.name}
+            width={banner.width}
+            height={banner.height}
+            layout="responsive"
+          />
+        </PersonBannerContainer>
+      </PersonContainer>
+    </Section>
   );
 }

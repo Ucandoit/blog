@@ -16,6 +16,13 @@ export interface PersonData {
   lastname: string;
   jobPosition: string;
   socialMedias: SocialMediaData[];
+
+  banner: {
+    name: string;
+    url: string;
+    width: number;
+    height: number;
+  };
 }
 
 interface SocialMediaData {
