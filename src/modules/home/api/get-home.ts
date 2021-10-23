@@ -8,6 +8,18 @@ export interface HomeData {
   about: AboutData;
   professionalSkills: SkillsData;
   technicalSkills: SkillsData;
+
+  experiences: {
+    title: string;
+    items: Array<{
+      id: number;
+      begin: string;
+      end?: string;
+      company: string;
+      position: string;
+      description?: string;
+    }>;
+  };
 }
 
 export interface PersonData {

@@ -90,3 +90,13 @@ export const SkillContainer = styled.div<{ type: 'circle' | 'bar' }>`
     }
   `}
 `;
+
+export const ExperiencePeriod = styled.div`
+  font-weight: bold;
+`;
+
+export const ExperienceTitle = styled.div`
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: -0.25rem;
+`;
