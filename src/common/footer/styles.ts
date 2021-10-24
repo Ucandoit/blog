@@ -5,7 +5,7 @@ export const FooterContainer = styled.footer`
   ${({ theme }) => css`
     text-align: center;
     max-width: ${theme.layout.maxWidth};
-    margin: 0 auto;
+    margin: auto auto 0;
     padding: ${theme.spacing.md};
 
     a {

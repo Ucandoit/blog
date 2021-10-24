@@ -25,6 +25,13 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       background: ${theme.colors.background};
     }
 
+    #__next {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+
     button {
       border: none;
       background: none;
