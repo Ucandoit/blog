@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       border: none;
       background: none;
     }
+
+    a {
+      text-decoration: none;
+    }
   `}
 `;
 

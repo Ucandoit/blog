@@ -5,7 +5,6 @@ export const StyledMenuItem = styled(MenuItem)<{ open: boolean }>`
   ${({ theme, open }) => css`
     color: ${theme.colors.text};
     font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
     user-select: none;
     padding: 0 15px;

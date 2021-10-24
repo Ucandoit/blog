@@ -43,7 +43,6 @@ export const StyledNav = styled.nav`
 
 export const StyledLogo = styled(Logo)`
   ${({ theme }) => css`
-    text-decoration: none;
     color: ${theme.colors.primary};
     font-size: 2rem;
     position: relative;

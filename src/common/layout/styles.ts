@@ -6,5 +6,6 @@ export const StyledMain = styled.main`
     margin: 0 auto;
     padding: 20px;
     max-width: ${theme.layout.maxWidth};
+    width: 100%;
   `}
 `;
