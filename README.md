@@ -37,6 +37,6 @@ kustomize build deploy/kustomize | kubectl apply -f -
 ## TODO
 
 - [ ] Implement blog pages
-- [ ] Render css server side
+- [x] Render css server side
 - [ ] Add SEO support
 - [ ] add Gitlab actions to auto deploy

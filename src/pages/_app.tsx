@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
       <BaseLayout>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </BaseLayout>
     </ThemeProvider>

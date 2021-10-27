@@ -29,6 +29,7 @@ export default function Person({
             width={banner.width}
             height={banner.height}
             layout="responsive"
+            priority
           />
         </PersonBannerContainer>
       </PersonContainer>

@@ -14,6 +14,8 @@
     // disable because href is defined on next link component
     "jsx-a11y/anchor-is-valid": "off",
     // no need for ts
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    // if we know exactly what we are passing this is not practical
+    "react/jsx-props-no-spreading": "off"
   }
 }
