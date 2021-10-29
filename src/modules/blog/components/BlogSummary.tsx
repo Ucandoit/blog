@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
 import Link from 'next/link';
 import { BlogData } from '../apis/models';
-import { BlogSubTitle, BlogSummaryContainer, BlogTitle, Tag, TagsContainer } from './styles';
+import { BlogSubTitle, BlogSummaryContainer, BlogTitle, DetailLink, SummaryText, Tag, TagsContainer } from './styles';
 
 interface BlogSummaryProps {
   blog: BlogData;
 }
 
-const BlogSummary = ({ blog: { id, title, author, created_at, tags, content } }: BlogSummaryProps) => {
+const BlogSummary = ({ blog: { id, title, author, created_at, tags, summary } }: BlogSummaryProps) => {
   const created = dayjs(created_at).format('YYYY-MM-DD');
   return (
     <BlogSummaryContainer>
@@ -25,9 +25,9 @@ const BlogSummary = ({ blog: { id, title, author, created_at, tags, content } }:
           <Tag key={tag.name}>{tag.name}</Tag>
         ))}
       </TagsContainer>
-      <p>{content}</p>
-      <Link href={`/blogs/${id}`}>
-        <a>continue</a>
+      <SummaryText>{summary}</SummaryText>
+      <Link href={`/blogs/${id}`} passHref>
+        <DetailLink>Continue reading »</DetailLink>
       </Link>
     </BlogSummaryContainer>
   );

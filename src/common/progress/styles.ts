@@ -43,7 +43,7 @@ export const ProgressBarValue = styled.div`
 export const ProgressBarBackground = styled.div`
   ${({ theme }) => css`
     margin-top: 1.5rem;
-    background-color: ${theme.colors.primaryBg};
+    background-color: ${theme.colors.text}90;
   `}
 `;
 
