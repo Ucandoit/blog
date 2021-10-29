@@ -4,7 +4,8 @@ export interface BlogData {
   author: string;
   content?: string;
 
-  created_at: Date;
+  createDate: Date;
+  updateDate: Date;
   tags: Tag[];
   summary?: string;
 }

@@ -7,8 +7,8 @@ interface BlogSummaryProps {
   blog: BlogData;
 }
 
-const BlogSummary = ({ blog: { id, title, author, created_at, tags, summary } }: BlogSummaryProps) => {
-  const created = dayjs(created_at).format('YYYY-MM-DD');
+const BlogSummary = ({ blog: { id, title, author, createDate, tags, summary } }: BlogSummaryProps) => {
+  const created = dayjs(createDate).format('YYYY-MM-DD');
   return (
     <BlogSummaryContainer>
       <Link href={`/blogs/${id}`} passHref>
