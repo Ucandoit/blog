@@ -8,6 +8,7 @@ export interface BlogData {
   updateDate: Date;
   tags: Tag[];
   summary?: string;
+  slug: string;
 }
 
 export interface Tag {

@@ -1,5 +1,5 @@
-import { BlogSummary, getBlogs } from '../modules/blog';
-import { BlogData } from '../modules/blog/apis/models';
+import { BlogSummary, getBlogs } from '../../modules/blog';
+import { BlogData } from '../../modules/blog/apis/models';
 
 interface BlogsProps {
   blogs: BlogData[];

@@ -7,11 +7,11 @@ interface BlogSummaryProps {
   blog: BlogData;
 }
 
-const BlogSummary = ({ blog: { id, title, author, createDate, tags, summary } }: BlogSummaryProps) => {
+const BlogSummary = ({ blog: { id, slug, title, author, createDate, tags, summary } }: BlogSummaryProps) => {
   const created = dayjs(createDate).format('YYYY-MM-DD');
   return (
     <BlogSummaryContainer>
-      <Link href={`/blogs/${id}`} passHref>
+      <Link href={`/blogs/${id}/${slug}`} passHref>
         <BlogTitle>{title}</BlogTitle>
       </Link>
       <BlogSubTitle>
@@ -26,7 +26,7 @@ const BlogSummary = ({ blog: { id, title, author, createDate, tags, summary } }:
         ))}
       </TagsContainer>
       <SummaryText>{summary}</SummaryText>
-      <Link href={`/blogs/${id}`} passHref>
+      <Link href={`/blogs/${id}/${slug}`} passHref>
         <DetailLink>Continue reading »</DetailLink>
       </Link>
     </BlogSummaryContainer>
