@@ -1,3 +1,4 @@
+import { useTheme } from 'styled-components';
 import { ProgressProps } from './interface';
 import { ProgressCircleContainer, ProgressCircleText, ProgressSVG, ProgressSVGCircle } from './styles';
 
@@ -9,6 +10,7 @@ const ProgressCircle = ({ value, color, title, displayValue = true }: Omit<Progr
   const circumference = 2 * Math.PI * radius;
   const strokeDasharray = circumference.toFixed(3);
   const strokeDashoffset = `${((1 - value) * circumference).toFixed(3)}px`;
+  const theme = useTheme();
   return (
     <>
       <ProgressCircleContainer>
@@ -17,10 +19,19 @@ const ProgressCircle = ({ value, color, title, displayValue = true }: Omit<Progr
             cx={SIZE}
             cy={SIZE}
             r={radius}
+            fill="none"
+            strokeWidth={THICKNESS}
+            color={`${theme.colors.text}50`}
+          />
+          <ProgressSVGCircle
+            cx={SIZE}
+            cy={SIZE}
+            r={radius}
             strokeDasharray={strokeDasharray}
             strokeDashoffset={strokeDashoffset}
             fill="none"
             strokeWidth={THICKNESS}
+            color={theme.colors.primary}
           />
         </ProgressSVG>
         {displayValue ? <ProgressCircleText>{value * 100}%</ProgressCircleText> : null}
