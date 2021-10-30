@@ -24,7 +24,7 @@ spec:
             name: next-config
       containers:
       - name: ucandoit-io
-        image: registry.ucandoit.io/ucandoit-io:0.0.1
+        image: registry.ucandoit.io/ucandoit-io:0.0.2
         imagePullPolicy: Always
         ports:
         - name: http-entry

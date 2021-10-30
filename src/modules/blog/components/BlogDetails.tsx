@@ -12,7 +12,7 @@ const BlogDetails = ({ blog }: BlogDetailsProps) => {
   useEffect(() => {
     setTimeout(() => Prism.highlightAll(), 0);
   }, []);
-  return <BlogDetailsContainer dangerouslySetInnerHTML={{ __html: marked(blog.content as string) }} />;
+  return <BlogDetailsContainer dangerouslySetInnerHTML={{ __html: marked(blog?.content || '') }} />;
 };
 
 export default BlogDetails;
