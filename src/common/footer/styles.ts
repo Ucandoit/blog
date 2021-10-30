@@ -10,7 +10,6 @@ export const FooterContainer = styled.footer`
 
     a {
       color: ${theme.colors.primary};
-      text-decoration: none;
     }
   `}
 `;

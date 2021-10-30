@@ -5,7 +5,6 @@ export const StyledMenuItem = styled(MenuItem)<{ open: boolean }>`
   ${({ theme, open }) => css`
     color: ${theme.colors.text};
     font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
     user-select: none;
     padding: 0 15px;
@@ -33,6 +32,7 @@ export const StyledMenuItem = styled(MenuItem)<{ open: boolean }>`
 export const StyledMenu = styled.div<{ open: boolean }>`
   ${({ theme, open }) => css`
     display: flex;
+    z-index: 10;
 
     @media (max-width: 767px) {
       position: absolute;
