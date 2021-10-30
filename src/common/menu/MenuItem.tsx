@@ -1,18 +1,24 @@
 import Link from 'next/link';
-import { FC } from 'react';
 
 interface MenuItemProps {
   url: string;
   title: string;
   className?: string;
+  handleClickMenu: (value?: boolean) => void;
 }
 
-const MenuItem: FC<MenuItemProps> = ({ className, url, title }) => (
-  // <div className={className}>
+const MenuItem = ({ className, url, title, handleClickMenu }: MenuItemProps): JSX.Element => (
   <Link href={url}>
-    <a className={className}>{title}</a>
+    <a
+      className={className}
+      onClick={() => handleClickMenu(false)}
+      onKeyUp={() => handleClickMenu(false)}
+      role="link"
+      tabIndex={0}
+    >
+      {title}
+    </a>
   </Link>
-  // </div>
 );
 
 export default MenuItem;

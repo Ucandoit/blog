@@ -32,7 +32,6 @@ export const StyledMenuItem = styled(MenuItem)<{ open: boolean }>`
 export const StyledMenu = styled.div<{ open: boolean }>`
   ${({ theme, open }) => css`
     display: flex;
-    z-index: 10;
 
     @media (max-width: 767px) {
       position: absolute;
@@ -41,6 +40,7 @@ export const StyledMenu = styled.div<{ open: boolean }>`
       left: -320px;
       flex-direction: column;
       width: 320px;
+      height: 100vh;
       background-color: ${theme.colors.background};
       transform: ${open ? 'translate(320px);' : 'translate(0)'};
       visibility: ${open ? 'visible' : 'hidden'};

@@ -3,8 +3,12 @@ import Logo from './Logo';
 
 export const StyledHeader = styled.header`
   ${({ theme }) => css`
+    position: fixed;
+    width: 100%;
     height: 3rem;
     border-bottom: 1px solid ${theme.colors.text}50;
+    background-color: ${theme.colors.background};
+    z-index: 1;
 
     @media (min-width: 768px) {
       height: 4rem;

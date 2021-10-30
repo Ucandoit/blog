@@ -1,11 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Menu from '../menu/Menu';
 import useWindowSize from '../useWindowSize';
 import { StyledHeader, StyledLogo, StyledNav } from './styles';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const handleClickMenu = () => setOpen(!open);
+  const handleClickMenu = useCallback(
+    (value?: boolean) => {
+      if (value === undefined) {
+        setOpen(!open);
+      } else {
+        setOpen(value);
+      }
+    },
+    [open]
+  );
   const { width } = useWindowSize();
   useEffect(() => {
     if (width >= 768) {
@@ -16,7 +25,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledNav>
-        <button type="button" onClick={handleClickMenu}>
+        <button type="button" onClick={() => handleClickMenu()}>
           <div className="iconfont icon-menu" />
         </button>
         <StyledLogo />
