@@ -38,8 +38,8 @@ export const Tag = styled.div`
   ${({ theme }) => css`
     display: inline-block;
     font-size: 0.8rem;
-    color: ${theme.colors.secondary};
-    border: 1px solid ${theme.colors.secondary};
+    color: ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
     border-radius: 4px;
     padding: 4px 10px;
 
@@ -58,7 +58,13 @@ export const DetailLink = styled.a`
   ${({ theme }) => css`
     position: absolute;
     right: 10px;
-    color: ${theme.colors.primary};
+    color: ${theme.colors.secondary};
+  `}
+`;
+
+export const BackLink = styled.a`
+  ${({ theme }) => css`
+    color: ${theme.colors.secondary};
   `}
 `;
 
@@ -72,6 +78,12 @@ export const BlogDetailsContainer = styled.div`
       border-left: 0.3em solid ${theme.colors.primary};
       padding: 0px 1em;
       margin: 1em auto;
+    }
+
+    code {
+      background-color: ${theme.colors.text}50;
+      border-radius: 0.2em;
+      padding: 0 0.2em;
     }
 
     // https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-dark.css

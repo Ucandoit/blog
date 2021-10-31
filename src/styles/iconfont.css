@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1635796217341') format('truetype');
+  src: url('iconfont.ttf?t=1637879872053') format('truetype');
 }
 
 .iconfont {
@@ -17,6 +17,14 @@
 
 .icon-user:before {
   content: "\e7ae";
+}
+
+.icon-arrowup:before {
+  content: "\e7ee";
+}
+
+.icon-arrowleft:before {
+  content: "\e7ef";
 }
 
 .icon-menu:before {
