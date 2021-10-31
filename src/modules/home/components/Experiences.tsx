@@ -1,7 +1,8 @@
+import marked from 'marked';
 import Section from '../../../common/section/Section';
 import TimelineItem from '../../../common/timeline/TimelineItem';
 import { HomeData } from '../api/get-home';
-import { ExperiencePeriod, ExperienceTitle } from './styles';
+import { ExperienceDescription, ExperiencePeriod, ExperienceTitle } from './styles';
 
 interface ExperiencesProps {
   data: HomeData['experiences'];
@@ -23,7 +24,8 @@ const Experiences = ({ data: { title, items } }: ExperiencesProps) => (
         rightContent={
           <>
             <ExperienceTitle>{position}</ExperienceTitle>
-            <div>{description}</div>
+            {/* eslint-disable-next-line react/no-danger */}
+            <ExperienceDescription dangerouslySetInnerHTML={{ __html: marked(description || '') }} />
           </>
         }
       />

@@ -9,7 +9,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["next.config.js"],
+  "ignorePatterns": ["next.config.js", "babel.config.js"],
   "rules": {
     // disable because href is defined on next link component
     "jsx-a11y/anchor-is-valid": "off",

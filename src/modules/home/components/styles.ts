@@ -100,3 +100,14 @@ export const ExperienceTitle = styled.div`
   font-size: 1.25rem;
   margin-top: -0.25rem;
 `;
+
+export const ExperienceDescription = styled.div`
+  p,
+  ul {
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+`;
