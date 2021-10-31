@@ -34,6 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const blog = await getBlog(parseInt(context.params?.id as string, 10));
   return {
     props: { blog },
+    revalidate: 600,
   };
 };
 

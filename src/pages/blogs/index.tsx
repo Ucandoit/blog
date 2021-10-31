@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import SEO from '../../common/seo/SEO';
 import { BlogSummary, getBlogs } from '../../modules/blog';
 import { BlogData } from '../../modules/blog/apis/models';
@@ -17,9 +18,10 @@ const Blogs = ({ blogs }: BlogsProps) => (
 
 export default Blogs;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const blogs = await getBlogs();
   return {
     props: { blogs },
+    revalidate: 600,
   };
 };

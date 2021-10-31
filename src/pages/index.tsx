@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import SEO from '../common/seo/SEO';
 import { getHome, Home, HomeData } from '../modules/home';
 
@@ -14,9 +15,10 @@ export default function Index({ data }: IndexProps) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const data = await getHome();
   return {
     props: { data },
+    revalidate: 600,
   };
-}
+};
