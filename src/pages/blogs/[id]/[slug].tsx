@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import SEO from '../../../common/seo/SEO';
 import { BlogDetails, countBlogs, getBlog, getBlogs } from '../../../modules/blog';
 import { BlogData } from '../../../modules/blog/apis/models';
 
@@ -6,7 +7,12 @@ interface BlogProps {
   blog: BlogData;
 }
 
-const Blog = ({ blog }: BlogProps): JSX.Element => <BlogDetails blog={blog} />;
+const Blog = ({ blog }: BlogProps): JSX.Element => (
+  <>
+    <SEO title={`ZHAO Yukan's blog - ${blog?.title}`} />
+    <BlogDetails blog={blog} />
+  </>
+);
 
 // dynamic path /blogs/[id]/[slug]
 export const getStaticPaths: GetStaticPaths = async () => {

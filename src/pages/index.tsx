@@ -1,3 +1,4 @@
+import SEO from '../common/seo/SEO';
 import { getHome, Home, HomeData } from '../modules/home';
 
 interface IndexProps {
@@ -5,7 +6,12 @@ interface IndexProps {
 }
 
 export default function Index({ data }: IndexProps) {
-  return <Home data={data} />;
+  return (
+    <>
+      <SEO title={`ZHAO Yukan's website`} showOg />
+      <Home data={data} />
+    </>
+  );
 }
 
 export async function getStaticProps() {
