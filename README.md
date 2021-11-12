@@ -1,6 +1,7 @@
 # ucandoit.io
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) for my personal website.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) for my personal website.  
+The goal is to try out Next.js alongside with strapi as headless CMS.
 
 ## Development
 
@@ -36,7 +37,17 @@ kustomize build deploy/kustomize | kubectl apply -f -
 
 ## TODO
 
-- [ ] Implement blog pages
+Functionnal
+
+- [x] Implement blog pages
+- [ ] Filter blogs by tag
+- [ ] Infinite scroll
+- [ ] Switch between dark/light theme
+- [ ] I18N support
+
+System
+
 - [x] Render css server side
-- [ ] Add SEO support
-- [ ] add Gitlab actions to auto deploy
+- [x] Add basic SEO support
+- [ ] Add page specific SEO
+- [x] add Gitlab actions to auto deploy
